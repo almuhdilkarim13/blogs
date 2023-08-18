@@ -1,4 +1,4 @@
 baseURL = 'http://almuhdilkarim.org/'
 languageCode = 'en-us'
 title = 'Al Muhdil Karim'
-themes = stacks
+themes = 'stacks'
