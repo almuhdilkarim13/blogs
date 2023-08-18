@@ -5,26 +5,28 @@ paginate = 5
 title = "Al Muhdil Karim"
 copyright = "almuhdilkarim"
 disqusShortname = "hugo-theme-stack"
-DefaultContentLanguage = "en"
+DefaultContentLanguage = "id"
 hasCJKLanguage = false
+
+[languages.id]
+languageName = "Indonesia"
+title = "Al Muhdil Karim"
+weight = 1
+
+  [languages.id.params]
+  description = "Contoh Deskripsi"
+
 
 [languages.en]
 languageName = "English"
-title = "Example Site"
-weight = 1
+title = "Al Muhdil Karim"
+weight = 2
 
   [languages.en.params]
   description = "Example description"
 
 
-[languages.ar]
-languageName = "عربي"
-languagedirection = "rtl"
-title = "موقع تجريبي"
-weight = 3
 
-  [languages.ar.params]
-  description = "وصف تجريبي"
 
 [permalinks]
 post = "/p/:slug/"
