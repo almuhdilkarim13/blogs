@@ -15,7 +15,6 @@ seo   :
     keyword     : ""
     cover       : ""
     description :  "Menginstall lynis dengan mudah dengan berbaagai metode dan untuk berbagai distro linux "
-
 ---
 
 ## Pilih perangkat
