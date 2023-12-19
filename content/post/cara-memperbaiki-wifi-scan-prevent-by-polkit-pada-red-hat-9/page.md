@@ -2,7 +2,7 @@
 draft     : false
 author    : "Al Muhdil Karim"
 title     : "Cara memperbaki  'Authentication Required. System Policy Prevents WiFi Scans' pada RedHat 9 "
-slug      : "cara-memperbaiki-wifi-scan-prevent-by-policy-pada-red-hat-9"
+slug      : "cara-memperbaiki-wifi-scan-prevent-by-polkit-policy-pada-red-hat-9"
 images    : ""
 date      : 2023-12-19
 lastmod   : ""
