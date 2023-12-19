@@ -14,8 +14,7 @@ seo   :
     nofollow    : ""
     keyword     : ""
     cover       : ""
-    description :  "Cara melakukan konfigurasi ip4 pada terminal di linux menggunakan perintah ip"
-
+    description :  "Cara memperbaiki policy polkit terkait permintaan password saat melakukan scan atau memulai wifi."
 ---
 
 ## Keterangan
