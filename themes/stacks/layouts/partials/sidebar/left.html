@@ -17,15 +17,15 @@
                     
                     {{ if $avatar }}
                         {{ $avatarResized := $avatar.Resize "300x" }}
-                        <img src="{{ $avatarResized.RelPermalink }}" width="{{ $avatarResized.Width }}"
-                            height="{{ $avatarResized.Height }}" class="site-logo" loading="lazy" alt="Avatar">
+                        <img src="{{ $avatarResized.RelPermalink }}" width="{{ $avatarResized.Width }}" height="{{ $avatarResized.Height }}" class="site-logo" loading="lazy" alt="Avatar">
                     {{ else }}
                         {{ errorf "Failed loading avatar from %q" . }}
                     {{ end }}
                 {{ end }}
                 </a>
                 {{ with $.Site.Params.sidebar.emoji }}
-                    <span class="emoji">{{ . }}</span>
+                    {{ $emoji := resources.Get ( $.Site.Params.sidebar.emoji ) }}
+                    <img  class="emoji" src="{{ $emoji.RelPermalink }}" loading="lazy" alt="Avatar">
                 {{ end }}
             </figure>
             {{ end }}
