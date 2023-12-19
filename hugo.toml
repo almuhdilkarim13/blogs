@@ -45,7 +45,7 @@ rssFullContent = true
 
   [params.sidebar]
   emoji = "img/arch.png"
-  subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  subtitle = "Machine never screw, you do."
 
     [params.sidebar.avatar]
     enabled = true
