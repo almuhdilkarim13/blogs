@@ -14,8 +14,7 @@ seo   :
     nofollow    : ""
     keyword     : ""
     cover       : ""
-    description :  "Menginstall lynis dengan mudah dengan berbaagai metode dan untuk berbagai distro linux "
-
+    description :  "Cara melakukan konfigurasi ip4 pada terminal di linux menggunakan perintah ip"
 ---
 
 ## Pilih perangkat
