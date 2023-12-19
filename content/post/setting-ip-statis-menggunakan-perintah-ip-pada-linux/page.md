@@ -15,6 +15,7 @@ seo   :
     keyword     : ""
     cover       : ""
     description :  "Menginstall lynis dengan mudah dengan berbaagai metode dan untuk berbagai distro linux "
+
 ---
 
 ## Pilih perangkat
@@ -57,8 +58,6 @@ dalam kesempatan ini kita akan melakukan konfigurasi ip kepada perangkat `enp2s0
 | gateway    | 172.27.5.1    |
 | dns        | 1.1.1.1       |
 
-
-
 ## Konfigurasi IP
 
 langkah pertama adalah melakukan konfigurasi ip perangkat yang disertai dengan prefix cidr nya;
@@ -69,15 +68,9 @@ ip address add 172.27.5.82/24 broadcast + dev enp2s0
 
 broadcast adalah alamat broadcast perangkat untuk nilai default silahkan masukan tanda `+` sedangkan `dev` pada perintah diatas adalah nama perangkat yang akan disetting.
 
-
-
 ## Konfigurasi DNS
 
-
-
 selanjutnya kita akan melakukan konfigurasi dns periksa file   `/etc/resolve.conf` dengan perintah 
-
-
 
 ```shell
 cat /etc/resolv.conf
@@ -95,8 +88,6 @@ jika ditemukan lanjutkan pada proses konfigurasi Gateway, namun jika tidak ditem
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 ```
 
-
-
 ## Konfigurasi Gateway
 
 Untuk konfigurasi gateway yang pertama adalah menambahkan route pada perangkat `enp2s0` dengan ip gateway router menggunakan perintah berikut.
@@ -113,6 +104,26 @@ ip route add default via 172.25.5.1 dev enp2s0
 
 sampai disini kita telah berhasil menambahkan ip statis pada perangkat `enp2s0`.  
 
+## Test Koneksi
 
+untuk melakukan test koneksi terhadap konfigurasi di atas, kita bisa menggunkan perintah `ping` , berikut contohnya:
 
+```shell
+ping 8.8.8.8
+```
 
+jika output dari perintah diatas seperti contoh dibawah ini maka konfigurasi telah berhasil di lakukan
+
+```shell
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=118 time=16.5 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=118 time=16.6 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=118 time=16.6 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=118 time=16.6 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=118 time=16.6 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=118 time=16.5 ms
+^C
+--- 8.8.8.8 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5005ms
+rtt min/avg/max/mdev = 16.492/16.572/16.642/0.055 ms
+```
