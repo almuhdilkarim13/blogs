@@ -53,4 +53,4 @@ ResultInactive=yes
 ResultActive=yes
 ```
 
-setelah itu simpan file dan ujicoba kembali dengan mengaktivkan module wifi dan mulai melakukan scaning jaringan yang tersedia. Dengan policy yang baru seharusnya tidak ada lagi permintaan password saat kita menggunakan wifi.
+setelah itu simpan file dan ujicoba kembali dengan mengaktivkan module wifi dan mulai melakukan scaning jaringan yang tersedia. 
