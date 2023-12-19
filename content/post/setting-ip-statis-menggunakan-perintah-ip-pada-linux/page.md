@@ -4,7 +4,7 @@ author    : "Al Muhdil Karim"
 title     : "Setting Ip Statis Menggunakan Perintah Ip Pada Linux"
 slug      : "setting-ip-statis-menggunakan-perintah-ip-pada-linux"
 images    : ""
-date      : 2023-12-20
+date      : 2023-12-19
 lastmod   : ""
 categories: [ DevOps ]
 tags      : [ linux, ipv4 ]
