@@ -1,41 +1,43 @@
 ---
-draft      : false    
-title      : "Memperkuat Otentikasi Pada Linux Dengan Meningkatkan Hashing Rounds PAM"
-date       : 2021-06-18
-lastmod    : ""
-apps       : "pam"
-programing : ""
-related1  : "pam"
-related2  : "centos"
-related3  : "security"
-related4  : "DevOps"
-categories : [ Devops ]
-tags       : [ pam ]
-math       : false
-article :
-    status    : true
-    thumbnail : ""
-    teaser    : ""
-slide :
-    status   : false
-    event    : ""
-    organize : ""
-audio :
-    status   : false
-    url      : ""
-    sub_id   : ""
-    sub_en   : ""
-    desc     : ""
-video :
-    status   : false
-    videoid  : ""
-    desc     : ""
-seo   :
-    index       : ""
-    nofollow    : ""
-    keyword     : ""
-    cover       : ""
-    description : "Bagaimana Mempekuat Hash pada PAM untuk mempersulit aktivitas cracking password di linux"
+draft: false
+title: Memperkuat Otentikasi Pada Linux Dengan Meningkatkan Hashing Rounds PAM
+date: 2021-06-18
+lastmod: ""
+apps: pam
+programing: ""
+related1: pam
+related2: centos
+related3: security
+related4: DevOps
+categories:
+  - DevOps
+tags:
+  - pam
+math: false
+article:
+  status: true
+  thumbnail: ""
+  teaser: ""
+slide:
+  status: false
+  event: ""
+  organize: ""
+audio:
+  status: false
+  url: ""
+  sub_id: ""
+  sub_en: ""
+  desc: ""
+video:
+  status: false
+  videoid: ""
+  desc: ""
+seo:
+  index: ""
+  nofollow: ""
+  keyword: ""
+  cover: ""
+  description: Bagaimana Mempekuat Hash pada PAM untuk mempersulit aktivitas cracking password di linux
 ---
 
 ## PAM dan Password Cracking
