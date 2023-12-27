@@ -1,4 +1,4 @@
-baseurl = "https://almuhdilkarim.github.io"
+baseurl = "https://monumental-phoenix-523b5a.netlify.app"
 languageCode = "en-us"
 theme = "stacks"
 paginate = 5
