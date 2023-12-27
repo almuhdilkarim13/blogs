@@ -1,6 +1,10 @@
 backend:
   name: github
   repo: almuhdilkarim/blogs
+  site_domain: https://almuhdilkarim.github.io
+  api_root: https://api.github.com
+  base_url: https://api.netlify.com
+  auth_endpoint : auth
   branch: main # Branch to update (optional; defaults to master)
   publish_mode: editorial_workflow
 
