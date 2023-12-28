@@ -17,19 +17,13 @@ seo   :
     description :  "Cara melakukan konfigurasi ip4 pada terminal di linux menggunakan perintah ip"
 ---
 
-
-
 ## Installasi
-
-
 
 install dns mask dengan menggunakan perintah berikut
 
 ```shell
 sudo dnf install dnsmasq
 ```
-
-
 
 ## Konfigurasi
 
@@ -39,15 +33,11 @@ copy default config dnsmasq dengan perintah berikut
 sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf.origin
 ```
 
-
-
 kosong file konfigurasi dengan perintah
 
 ```shell
 echo '' > /etc/dnsmasq.conf
 ```
-
-
 
 selanjutnya isikan konfigurasi berikut
 
@@ -81,23 +71,17 @@ server=8.8.8.8
 # log-facility=/var/log/dnsmasq.log
 ```
 
-
-
 Lakukan pengencekan konfigurasi dengan perintah
 
 ```shell
 sudo dnsmasq --no-daemon --log-queries
 ```
 
-
-
 aktivkan service dan auto enable saat proses booting
 
 ```
 systemctl enable --now dnsmasq
 ```
-
-
 
 ## konfigurasi firewall
 
@@ -115,19 +99,11 @@ jika ada zone lainya pada firewalld silahkan tambahkan. setelah itu reload konfi
 firewall-cmd --reload
 ```
 
-
-
-
-
 ## Pengujian
 
 ```shell
 dig fahmaya.comn
 ```
-
-
-
-
 
 ## Troubleshoot
 
@@ -157,8 +133,6 @@ Dec 27 18:10:51 turing systemd[1]: dnsmasq.service: Failed with result 'exit-cod
 Dec 27 18:10:51 turing systemd[1]: Failed to start DNS caching server..
 ```
 
-
-
 buka file `/usr/lib/systemd/system/dnsmasq.service` dengan perintah
 
 ```shell
@@ -184,8 +158,6 @@ WantedBy=multi-user.target
 
 maka ganti menjadi
 
-
-
 ```shell
 [Unit]
 Description=DNS caching server.
@@ -202,11 +174,7 @@ WantedBy=multi-user.target
 ~                         
 ```
 
-
-
 selanjutnya restart virtual guest untuk menguji konfigurasi tersebut.
-
- 
 
 ### Reference
 
@@ -221,17 +189,5 @@ https://oss.segetech.com/intra/srv/dnsmasq.conf
 [systemd - Cause a script to execute after networking has started? - Unix &amp; Linux Stack Exchange](https://unix.stackexchange.com/questions/126009/cause-a-script-to-execute-after-networking-has-started)
 
 [networking - dnsmasq not starting on boot - Raspberry Pi Stack Exchange](https://raspberrypi.stackexchange.com/questions/106531/dnsmasq-not-starting-on-boot)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
