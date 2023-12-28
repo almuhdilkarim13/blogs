@@ -4,7 +4,7 @@ author    : "Al Muhdil Karim"
 title     : "Installasi aide ( Advanced Intrusion Detection Environment ) pada redhat dan centos"
 slug      : "setting-ip-statis-menggunakan-perintah-ip-pada-linux"
 images    : ""
-date      : 2023-12-23
+date      : 2023-12-27
 lastmod   : ""
 categories: [ DevOps ]
 tags      : [ security, aide ]
@@ -71,5 +71,3 @@ End timestamp: 2023-12-29 04:58:11 +0700 (run time: 0m 13s)
 ```
 
 maka aide telah berhasil terinstall.
-
-

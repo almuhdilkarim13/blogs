@@ -189,5 +189,3 @@ https://oss.segetech.com/intra/srv/dnsmasq.conf
 [systemd - Cause a script to execute after networking has started? - Unix &amp; Linux Stack Exchange](https://unix.stackexchange.com/questions/126009/cause-a-script-to-execute-after-networking-has-started)
 
 [networking - dnsmasq not starting on boot - Raspberry Pi Stack Exchange](https://raspberrypi.stackexchange.com/questions/106531/dnsmasq-not-starting-on-boot)
-
-
