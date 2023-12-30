@@ -31,16 +31,16 @@ sebelum melakukan installasi pastikan:
 
 - pastikan service `firewalld` berjalan dengan baik
 
-kita akan menjalankan tang server pada port `7500` untuk itu kita harus membuat selinux policy untuk memberikan izin bagi tang server untuk bisa beroperasi pada port `7500`
+kita akan menjalankan tang server pada port `33000` untuk itu kita harus membuat selinux policy untuk memberikan izin bagi tang server untuk bisa beroperasi pada port `33000`
 
 ```shell
-semanage port -a -t tangd_port_t -p tcp 7500
+semanage port -a -t tangd_port_t -p tcp 33000
 ```
 
-selanjutnya kita pastikan untuk membuka port `7500` pada firewall dengan perintah
+selanjutnya kita pastikan untuk membuka port `33000` pada firewall dengan perintah
 
 ```shell
-firewall-cmd --zone=public --permanent --add-port=7500/tcp
+firewall-cmd --zone=public --permanent --add-port=33000/tcp
 ```
 
 reload firewall untuk aktivasi konfigurasi dengan perintah
@@ -55,7 +55,7 @@ selanjutnya enable service `tangd` dengan perintah
 systemctl enable tangd.socket
 ```
 
-setelah socket active kita ubah bind default dari tang yang awalnya berjalan pada port `80` menjadi port `7500` dengan perintah
+setelah socket active kita ubah bind default dari tang yang awalnya berjalan pada port `80` menjadi port `33000` dengan perintah
 
 ```shell
 systemctl edit tangd.socket
@@ -66,7 +66,7 @@ selanjutnya isikan konfigurasi berikut
 ```shell
 [Socket]
 ListenStream=
-ListenStream=7500
+ListenStream=33000
 ```
 
 save konfigurasi dan lakukan reload-daemon dengan perintah
@@ -84,7 +84,7 @@ systemctl show tangd.socket -p Listen
 pastikan output dari perintah tersebut adalah sebagai berikut
 
 ```shell
-Listen=[::]:7500 (Stream)
+Listen=[::]:33000 (Stream)
 ```
 
 selanjutnya restart service dengan perintah
@@ -127,8 +127,8 @@ Selanjutnya :
   ```
 
 - Selanjutnya klik trust key dan pastikan kedua nilai hash sama
-
- ![image](./web-console-add-tang-key.png)
+  
+  ![image](./web-console-add-tang-key.png)
 
 - verifikasi clevis telah berjalan pada awal mula proses boot dengan perintah
   
@@ -146,10 +146,30 @@ Selanjutnya :
   clevis-pin-tpm2
   ```
 
+### Optional
 
+Jika menggunakan ip statis maka kita harus menambahkan beberapa parameter konfigurasi network keadalam dracut secara manual. Pertama kita akan menambahkan file baru pada `/etc/dracut.conf.d/`.
+
+```shell
+vi /etc/dracut.conf.d/static_ip.conf
+```
+
+tambahkan parameter berikut kedalam file yang baru kita buat
+
+```shell
+kernel_cmdline="ip=192.0.2.10::192.0.2.1:255.255.255.0::ens3:none"
+```
+
+selanjutnya kita melakukan regenerasi terhadap RAM disk dengan perintah
+
+```shell
+dracut -fv --regenerate-all
+```
 
 #### Reference
 
 [Configuring automated unlocking of encrypted volumes using policy-based decryption Red Hat Enterprise Linux 8](https://access.redhat.com/documentation/id-id/red_hat_enterprise_linux/8/html/security_hardening/configuring-automated-unlocking-of-encrypted-volumes-using-policy-based-decryption_security-hardening#rotating-tang-keys_configuring-automated-unlocking-of-encrypted-volumes-using-policy-based-decryption)
 
 
+
+[Appendix B. Kickstart commands and options reference Red Hat Enterprise Linux 8 | Red Hat Customer Portal](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/performing_an_advanced_rhel_8_installation/kickstart-commands-and-options-reference_installing-rhel-as-an-experienced-user#kickstart-commands-for-network-configuration_kickstart-commands-and-options-reference)
